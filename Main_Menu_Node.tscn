@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbduim2cukn6r"]
+
+[ext_resource type="Script" uid="uid://b21ve1hwla1jw" path="res://start_button.gd" id="1_er2rr"]
+[ext_resource type="FontFile" uid="uid://ddf7faeis2bq5" path="res://Counting Apples.ttf" id="1_me3ig"]
+
+[sub_resource type="FontVariation" id="FontVariation_er2rr"]
+
+[node name="Main_Menu" type="Node2D"]
+texture_filter = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(240, 135)
+
+[node name="Game_Title" type="Label" parent="."]
+texture_filter = 1
+offset_left = -13.0
+offset_top = 12.0
+offset_right = 524.0
+offset_bottom = 72.02083
+theme_override_fonts/font = ExtResource("1_me3ig")
+theme_override_font_sizes/font_size = 32
+text = "Into the Abbys 2D Project "
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sub_Text" type="Label" parent="."]
+texture_filter = 1
+offset_left = -10.0
+offset_top = 72.0
+offset_right = 513.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 15
+text = "This is only a testing Scene (Game In Production State)"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Start_Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 166.0
+offset_top = 123.0
+offset_right = 316.0
+offset_bottom = 161.0
+theme_override_fonts/font = SubResource("FontVariation_er2rr")
+theme_override_font_sizes/font_size = 21
+text = "Start"
+script = ExtResource("1_er2rr")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Start_Button" to="Start_Button" method="_on_pressed"]

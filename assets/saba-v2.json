@@ -1,0 +1,212 @@
+{ "frames": {
+   "saba-v2 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 1.aseprite": {
+    "frame": { "x": 28, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 2.aseprite": {
+    "frame": { "x": 56, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 3.aseprite": {
+    "frame": { "x": 84, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 4.aseprite": {
+    "frame": { "x": 112, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 5.aseprite": {
+    "frame": { "x": 140, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 6.aseprite": {
+    "frame": { "x": 168, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 7.aseprite": {
+    "frame": { "x": 196, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 8.aseprite": {
+    "frame": { "x": 224, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 9.aseprite": {
+    "frame": { "x": 252, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 10.aseprite": {
+    "frame": { "x": 280, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 11.aseprite": {
+    "frame": { "x": 308, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 12.aseprite": {
+    "frame": { "x": 336, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 13.aseprite": {
+    "frame": { "x": 364, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 14.aseprite": {
+    "frame": { "x": 392, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 15.aseprite": {
+    "frame": { "x": 420, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 16.aseprite": {
+    "frame": { "x": 448, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 17.aseprite": {
+    "frame": { "x": 476, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 18.aseprite": {
+    "frame": { "x": 504, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 19.aseprite": {
+    "frame": { "x": 532, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 20.aseprite": {
+    "frame": { "x": 560, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 21.aseprite": {
+    "frame": { "x": 588, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   },
+   "saba-v2 22.aseprite": {
+    "frame": { "x": 616, "y": 0, "w": 28, "h": 44 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 28, "h": 44 },
+    "sourceSize": { "w": 28, "h": 44 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.16.1-arm64",
+  "image": "saba-v2.png",
+  "format": "RGBA8888",
+  "size": { "w": 644, "h": 44 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Backgrounds" },
+   { "name": "Saba" },
+   { "name": "Hair Back", "group": "Saba", "opacity": 255, "blendMode": "normal" },
+   { "name": "body", "group": "Saba", "opacity": 255, "blendMode": "normal" },
+   { "name": "mouth", "group": "Saba", "opacity": 255, "blendMode": "normal" },
+   { "name": "eyes Copy", "group": "Saba", "opacity": 255, "blendMode": "normal" },
+   { "name": "Skirt - closed", "group": "Saba", "opacity": 255, "blendMode": "normal" },
+   { "name": "Bow-tie", "group": "Saba", "opacity": 255, "blendMode": "normal" },
+   { "name": "hair-front", "group": "Saba", "opacity": 255, "blendMode": "normal" },
+   { "name": "ears", "group": "Saba", "opacity": 255, "blendMode": "normal" },
+   { "name": "hair peepa-boot", "group": "Saba", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
