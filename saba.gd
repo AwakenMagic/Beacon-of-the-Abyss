@@ -12,6 +12,9 @@ const ANIM_IDLE := "Idle_State"
 @export var COYOTE_TIME := 0.05
 @export var DOUBLE_TAP_WINDOW : float = 0.25
 
+@export var DASH_DURATION : float = 0.12
+@export var DASH_SPEED: float = 400.0
+
 
 var jump_buffer_timer := 0.0
 var coyote_timer := 0.0
@@ -22,16 +25,20 @@ var tap_count: int = 0
 #var tap_timer: float = 0.0
 
 var between_dashes_cooldown_timer: float = 0.0
-var between_dashes_cooldown_window: float = 0.5
+var between_dashes_cooldown_window: float = 0.25
 var between_dashes_cooldown: bool = false
 
 var dash_reset_timer: float = 0.0
 var dash_reset_window: float = 3.0
 
-var dash_cooldown_window: float = 3.0
+var dash_cooldown_window: float = 2.0
 var dash_count: int = 0
 var dash_cooldown_message: String
 
+var is_dashing: bool = false
+var dash_timer: float = 0.0
+
+var dash_direction: Vector2 = Vector2.ZERO
 func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("jump"):
@@ -57,26 +64,39 @@ func _physics_process(delta):
 
 		velocity.y += GRAVITY * mult * delta
 
-	
+	var dash_dir := activate_dash(delta)
 	var direction := Input.get_axis("left", "right")
-	velocity.x = direction * SPEED
-
 	
+	if dash_dir != Vector2.ZERO:
+		dash_direction = dash_dir
+
+		
+		
+	
+	
+	if is_dashing:
+		dash_timer -= delta
+		velocity = dash_direction * DASH_SPEED
+		if dash_timer <= 0.0:
+			is_dashing = false
+	else:
+		velocity.x = direction * SPEED
+	
+
 	if jump_buffer_timer > 0 and coyote_timer > 0:
 		velocity.y = JUMP_VELOCITY
 		jump_buffer_timer = max(jump_buffer_timer,0)
 		coyote_timer = max(coyote_timer, 0)
 	
 	
-	
 	flip_animation_h(direction)
 	update_animation()
 	
-	var dash_dir := activate_dash(delta)
-	if dash_dir != Vector2.ZERO:
-		print("Dashed!")
-		velocity = velocity + (dash_dir * 400)
-		print(dash_cooldown_message, ", Cooldown time : ", between_dashes_cooldown_timer, ", Dashes: ", dash_count,)
+	
+	#if dash_dir != Vector2.ZERO:
+	#	print("Dashed!")
+	#	velocity = velocity + (dash_dir * 400)
+	#	print(dash_cooldown_message, ", Cooldown time : ", between_dashes_cooldown_timer, ", Dashes: ", dash_count,)
 	
 	move_and_slide()
 	
@@ -119,6 +139,9 @@ func get_tap_direction() -> Vector2:
 
 func activate_dash(delta: float) -> Vector2:
 
+	if is_dashing:
+		return Vector2.ZERO
+	
 	var dash_dir = get_tap_direction()
 	var dash_pressed: bool = Input.is_action_just_pressed("dash")
 	
@@ -144,6 +167,8 @@ func activate_dash(delta: float) -> Vector2:
 		dash_count = 0
 		return Vector2.ZERO
 		
+	is_dashing = true
+	dash_timer = DASH_DURATION
 	dash_count += 1
 	between_dashes_cooldown_timer = between_dashes_cooldown_window
 	dash_reset_timer = dash_reset_window
