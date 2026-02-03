@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1lp4t2sujr22"]
+[gd_scene format=3 uid="uid://c1lp4t2sujr22"]
 
-[ext_resource type="Shader" uid="uid://dq1ohh0flwy3d" path="res://Subpixel.gdshader" id="1_0xm2m"]
+[ext_resource type="Shader" uid="uid://dq1ohh0flwy3d" path="res://subpixel.gdshader" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dbwroda7emxnm" path="res://lighthouse_level.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://og65y8aml63h" path="res://sub_viewport_container.gd" id="2_h2yge"]
 
@@ -8,9 +8,9 @@
 shader = ExtResource("1_0xm2m")
 shader_parameter/cam_offset = Vector2(0, 0)
 
-[node name="main" type="Node2D"]
+[node name="main" type="Node2D" unique_id=1727064481]
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=368829813]
 texture_filter = 1
 material = SubResource("ShaderMaterial_0xm2m")
 offset_right = 480.0
@@ -18,10 +18,10 @@ offset_bottom = 270.0
 stretch = true
 script = ExtResource("2_h2yge")
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1361882724]
 handle_input_locally = false
 size = Vector2i(480, 270)
 render_target_update_mode = 4
 
-[node name="Lighthouse_level" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_ig7tw")]
+[node name="Lighthouse_level" parent="SubViewportContainer/SubViewport" unique_id=225741532 instance=ExtResource("1_ig7tw")]
 texture_filter = 1

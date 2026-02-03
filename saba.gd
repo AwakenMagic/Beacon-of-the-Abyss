@@ -19,7 +19,18 @@ var GRAVITY: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var face_direction: Vector2
 var last_tap_dir: Vector2 = Vector2.ZERO
 var tap_count: int = 0
-var tap_timer: float = 0.0
+#var tap_timer: float = 0.0
+
+var between_dashes_cooldown_timer: float = 0.0
+var between_dashes_cooldown_window: float = 0.5
+var between_dashes_cooldown: bool = false
+
+var dash_reset_timer: float = 0.0
+var dash_reset_window: float = 3.0
+
+var dash_cooldown_window: float = 3.0
+var dash_count: int = 0
+var dash_cooldown_message: String
 
 func _physics_process(delta):
 	
@@ -60,13 +71,19 @@ func _physics_process(delta):
 	
 	flip_animation_h(direction)
 	update_animation()
+	
+	var dash_dir := activate_dash(delta)
+	if dash_dir != Vector2.ZERO:
+		print("Dashed!")
+		velocity = velocity + (dash_dir * 400)
+		print(dash_cooldown_message, ", Cooldown time : ", between_dashes_cooldown_timer, ", Dashes: ", dash_count,)
+	
 	move_and_slide()
 	
-	var dash_dir := poll_double_tap(delta)
-	if dash_dir != Vector2.ZERO:
-		print(dash_dir)
-		velocity += dash_dir * 400
-	
+	#var dash_dir := poll_double_tap(delta)
+	#if dash_dir != Vector2.ZERO:
+	#	print(dash_dir)
+	#	velocity += dash_dir * 400
 	
 	
 	
@@ -90,25 +107,59 @@ func flip_animation_h(direction) -> void:
 	
 func get_tap_direction() -> Vector2:
 	
-	if Input.is_action_just_pressed("up"):
+	if Input.is_action_pressed("up"):
 		return Vector2.UP
-	elif Input.is_action_just_pressed("down"):
+	elif Input.is_action_pressed("down"):
 		return Vector2.DOWN
-	elif Input.is_action_just_pressed("left"):
+	elif Input.is_action_pressed("left"):
 		return Vector2.LEFT
-	elif Input.is_action_just_pressed("right"):
+	elif Input.is_action_pressed("right"):
 		return Vector2.RIGHT
 	return Vector2.ZERO
 
+func activate_dash(delta: float) -> Vector2:
+
+	var dash_dir = get_tap_direction()
+	var dash_pressed: bool = Input.is_action_just_pressed("dash")
+	
+	#is cooldown between dashes active
+	if between_dashes_cooldown_timer > 0.0:
+		between_dashes_cooldown_timer = max(0.0, between_dashes_cooldown_timer - delta)
+	if dash_reset_timer > 0.0:
+		dash_reset_timer = max(0.0, dash_reset_timer - delta)
+	else:
+		dash_count = 0
+		
+	if dash_dir == Vector2.ZERO:
+		return Vector2.ZERO
+	if not dash_pressed:
+		return Vector2.ZERO
+	if between_dashes_cooldown_timer > 0.0:
+		return Vector2.ZERO
+
+		#Limit consequtive dashes
+	if dash_count >= 3:
+		between_dashes_cooldown_timer = dash_cooldown_window
+		dash_cooldown_message = "3 consecutive dashes cooldown active"
+		dash_count = 0
+		return Vector2.ZERO
+		
+	dash_count += 1
+	between_dashes_cooldown_timer = between_dashes_cooldown_window
+	dash_reset_timer = dash_reset_window
+	dash_cooldown_message = "between dashes cooldown active, "
+	return dash_dir
+		
+	
 
 func poll_double_tap(delta: float) -> Vector2:
 	
-	#Countdown the window
-	if tap_timer > 0.0:
-		tap_timer -= delta
-	else:
-		tap_count = 0
-		last_tap_dir = Vector2.ZERO
+	#Countdown the window		
+#	if tap_timer > 0.0:
+#		tap_timer -= delta
+#	else:
+#		tap_count = 0
+#		last_tap_dir = Vector2.ZERO
 	
 	
 	var tap_dir = get_tap_direction()
@@ -116,19 +167,19 @@ func poll_double_tap(delta: float) -> Vector2:
 		return Vector2.ZERO
 	
 	#New tap happened
-	if tap_dir == last_tap_dir and tap_timer > 0.0:
-		tap_count += 1
-	else:
-		tap_count = 1
-		last_tap_dir = tap_dir
+#	if tap_dir == last_tap_dir and tap_timer > 0.0:
+#		tap_count += 1
+#	else:
+#		tap_count = 1
+#		last_tap_dir = tap_dir
 	
 	#Refresh the timer window
-	tap_timer = DOUBLE_TAP_WINDOW
+#	tap_timer = DOUBLE_TAP_WINDOW
 	
-	if tap_count >= 2:
-		tap_count = 0
-		tap_timer = 0
-		last_tap_dir = Vector2.ZERO
-		return tap_dir
+#	if tap_count >= 2:
+#		tap_timer = 0
+#		last_tap_dir = Vector2.ZERO
+#		return tap_dir
+#		tap_count = 0
 		
 	return Vector2.ZERO
